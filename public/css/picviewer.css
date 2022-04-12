@@ -1,0 +1,154 @@
+/*
+Aufgabe 1 (5P): Anpassungen CSS
+- Bilder-Counter je Bereich - rechtsbündig
+- angeklickter/aktiver Bereich soll Hintergrundfarbe #ccc behalten
+- Vorschaubilder sollen scrollbar sein
+- Mauszeiger bei Vorschaubildern soll anzeigen, dass diese klickbar sind (wie bei Hyperlinks)
+- angeklickte/aktive Vorschaubilder sollen folgende beiden Formatierungen erhalten
+    border:1px solid #404549;
+    box-shadow:0 4px 2px rgba(51, 51, 51, 0.2);
+Tipp: Zum Testen kann die index_static.html geöffnet werden.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+img { 
+    vertical-align: bottom;
+}
+
+/******************************
+*
+*   Basis, Wrapper, Grid
+*
+********************************/
+
+.wrapper {
+  box-shadow: 0 4px 20px rgba(51, 51, 51, 0.2);
+  margin: 50px auto;
+  overflow: auto;
+  max-width: 1024px;
+}
+
+header {
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  color: #000;
+  clear: both;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;   
+}
+
+
+
+main {
+    display:flex;
+    height:400px;
+    overflow:hidden;
+}
+
+aside {
+    width:25%;
+    background: #34393d;
+    color:#fff;
+    padding:0.5rem;
+}
+
+footer {
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    color: #999;
+    clear: both;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+
+/******************************
+*
+*   Menü
+*
+********************************/
+
+aside nav ul {
+    padding:0;
+    list-style: none;
+}
+
+aside nav .item-count {
+  background: #34393d;
+  border-radius: 5px;
+  padding: 2px 8px;
+  margin: -2px -8px -2px 0;
+}
+
+aside nav li a {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+  padding: 15px;
+  text-decoration: none;
+  transition: background .1s linear;
+  width: 100%;
+  border-radius:8px;
+}
+
+aside nav li a:hover {
+  background: #404549;
+}
+
+
+/******************************
+*
+*   Thumbs, Vorschaubilder
+*
+********************************/
+
+.images {
+    width:15%;
+    height:100%;
+    padding:1rem;
+    background:#fff;
+}
+
+.images img {
+    max-width:100%;
+    margin:0.5rem 0;
+    border:1px solid transparent;
+}
+
+/******************************
+*
+*   Detail, großes Bild
+*
+********************************/
+
+.bigimage {
+    width:60%;
+    padding:0.5rem;
+    background:#fff;
+    text-align:center;
+    color:#999;
+    display:flex;
+    align-items:center;
+    border-left: 1px solid #ddd;
+}
+
+.bigimage img {
+    max-width:100%;
+    max-height:100%;
+}
